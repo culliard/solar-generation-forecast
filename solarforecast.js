@@ -45,7 +45,6 @@ function getSolarEstimations(lat, long, declination, azimuth, inverter_peak) {
     .then(function(response) {
 
         msg = eval(response.message)
-        console.log(msg.info)
         document.getElementById('place').insertAdjacentText('beforeEnd', msg.info.place);
         document.getElementById('timezone').insertAdjacentText('beforeEnd', msg.info.timezone);
         document.getElementById('time').insertAdjacentText('beforeEnd', msg.info.time);
