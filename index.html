@@ -1,0 +1,28 @@
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <link rel="stylesheet" href="solarforecast.css">
+</head>
+<body>
+    <h1>Solar generation forecast using public forecast.solar api</h1>
+    <form>
+        <fieldset>
+            <label for="lat">Latitude</label>
+            <input type="number" id="lat" placeholder="Latitude" maxlength ="12">
+            <label for="long">Longitude</label>
+            <input type="number" id="long" placeholder="Longitude" maxlength ="12">
+            <label for="Declination">Declination</label>
+            <input type="number" id="declination" placeholder="Declination"maxlength ="12">
+            <label for="azimuth">Azimuth</label>
+            <input type="number" id="azimuth" placeholder="Azimuth" maxlength ="12">
+            <label for="peak_power">Inverter Peak Power (kW)</label>
+            <input type="number" id="peak_power" placeholder="Peak power" maxlength ="12">
+            <input type="button" id="forecast" value="forecast">
+        </fieldset>
+    </form>
+    <canvas id="watts" style="height: 370px; width: 100%;"></canvas>
+    <canvas id="wattHours" style="height: 370px; width: 100%;"></canvas>
+    <canvas id="wattHoursDay" style="height: 370px; width: 100%;"></canvas>
+    <script src ="solarforecast.js"></script>
+</body>
+</html>
