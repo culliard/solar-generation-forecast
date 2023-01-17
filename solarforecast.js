@@ -45,9 +45,10 @@ function getSolarEstimations(lat, long, declination, azimuth, inverter_peak) {
     .then(function(response) {
 
         msg = eval(response.message)
-        document.getElementById('place').insertAdjacentText('beforeEnd', msg.info.place);
-        document.getElementById('timezone').insertAdjacentText('beforeEnd', msg.info.timezone);
-        document.getElementById('time').insertAdjacentText('beforeEnd', msg.info.time);
+
+        document.getElementById('place').textContent = 'Place: ' + msg.info.place;
+        document.getElementById('timezone').textContent ='Timezone: ' + msg.info.timezone;
+        document.getElementById('time').textContent = 'Time: ' + msg.info.time;
 
         drawChart('line', 'watts', 'kW', response.result.watts);
         drawChart('line', 'wattHours', 'kWh', response.result.watt_hours);
