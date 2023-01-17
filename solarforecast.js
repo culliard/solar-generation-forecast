@@ -44,6 +44,12 @@ function getSolarEstimations(lat, long, declination, azimuth, inverter_peak) {
     })
     .then(function(response) {
 
+        msg = eval(response.message)
+        console.log(msg.info)
+        document.getElementById('place').insertAdjacentText('beforeEnd', msg.info.place);
+        document.getElementById('timezone').insertAdjacentText('beforeEnd', msg.info.timezone);
+        document.getElementById('time').insertAdjacentText('beforeEnd', msg.info.time);
+
         drawChart('line', 'watts', 'kW', response.result.watts);
         drawChart('line', 'wattHours', 'kWh', response.result.watt_hours);
         drawChart('bar', 'wattHoursDay', 'kWh', response.result.watt_hours_day);
