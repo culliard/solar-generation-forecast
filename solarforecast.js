@@ -1,10 +1,9 @@
 
-function drawChart(type, name, units, values) {
+function drawChart(type, name, units, data) {
     
     let labels = [];
     let solarGeneration = [];
 
-    data = eval(values)
     for (var key in data) {
         labels.push(key);
         solarGeneration.push(data[key]);
@@ -44,7 +43,7 @@ function getSolarEstimations(lat, long, declination, azimuth, inverter_peak) {
     })
     .then(function(response) {
 
-        msg = eval(response.message)
+        msg = response.message
 
         document.getElementById('place').textContent = 'Place: ' + msg.info.place;
         document.getElementById('timezone').textContent ='Timezone: ' + msg.info.timezone;
